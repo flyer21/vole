@@ -2,7 +2,8 @@
 jasypt:
   encryptor:
     password: 12345678
-
+docker:
+  host: 192.168.56.220
 server:
   tomcat:
     max-threads: 500 # Maximum amount of worker threads.
@@ -10,7 +11,8 @@ server:
 
 spring:
   redis:
-    host: 127.0.0.1
+#    host: 127.0.0.1
+    host: ${docker.host}
     port: 6379
     timeout: 3000ms
     database: 0
